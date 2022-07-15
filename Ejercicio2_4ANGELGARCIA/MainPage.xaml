@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:video="clr-namespace:Xam.Forms.VideoPlayer;assembly=Xam.Forms.VideoPlayer"
+             x:Class="Ejercicio2_4ANGELGARCIA.MainPage">
+
+    <StackLayout>
+        <FlexLayout Direction="Row"
+                AlignItems="Center"
+                        Padding="5"
+                    BackgroundColor="Orange"
+                JustifyContent="SpaceEvenly">
+
+            <Label Text="Recorder Video" FontSize="18" Padding="10,5,30,10"/>
+        </FlexLayout>
+        <Label Text="" FontSize="18" Padding="10,5,30,10"/>
+        
+        <video:VideoPlayer 
+            x:Name="videoPlayer" 
+            BackgroundColor="White"
+            HorizontalOptions="Center"
+            HeightRequest="280" 
+            />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition  Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="Descripcion" FontSize="14" Grid.ColumnSpan="2"  Grid.Row="1" Grid.Column="0" Padding="20,5,30,10"/>
+            <Editor Keyboard="Text"
+                    HeightRequest="100" 
+                    x:Name="txtDescripcion"
+                    Grid.ColumnSpan="2"  
+                    Grid.Row="2" 
+                    Grid.Column="0"
+                    />
+
+            <Button Text="Lista" x:Name="btnList" Grid.Row="4" Grid.Column="0" Margin="10,0,10,0" Clicked="btnList_Clicked"  BackgroundColor="Orange"/>
+            <Button Text="Grabar" x:Name="btnGrabar" Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" Clicked="btnGrabar_Clicked"   BackgroundColor="Orange"/>
+            <Button Text="guardar" x:Name="btnGuardar" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" Margin="10,0,10,0" Clicked="btnGuardar_Clicked"   BackgroundColor="Orange"/>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
